@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/shop-svgrepo-com (1).svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ZML Solution</title>
+  </head>
+  <body>
+    <main id="app" class="flex flex-col h-screen">
+      <header class="py-5 border-b border-primaryColor mb-10">
+        <div class="container">
+          <div class="flex justify-between items-center">
+            <div>
+              <h1 class="text-2xl font-bold">ZML Solution</h1>
+              <p class="text-zinc-500">eCommerce</p>
+            </div>
+            <div class="flex items-center gap-3">
+              <button
+                class="border border-primaryColor text-primaryColor p-3 rounded-full active:scale-75 duration-200 hover:bg-primaryColor hover:text-white"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="w-4 h-4"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z"
+                  />
+                </svg>
+              </button>
+              <button
+              id="drawerBtn"
+                class="cart-btn animate__animated relative border border-primaryColor text-primaryColor p-3 rounded-full active:scale-75 duration-200 hover:bg-primaryColor hover:text-white"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  
+                  class="w-4 h-4 pointer-events-none"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M15.75 10.5V6a3.75 3.75 0 1 0-7.5 0v4.5m11.356-1.993 1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 0 1-1.12-1.243l1.264-12A1.125 1.125 0 0 1 5.513 7.5h12.974c.576 0 1.059.435 1.119 1.007ZM8.625 10.5a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm7.5 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z"
+                  />
+                </svg>
+                <div
+                  class="absolute cartCount -top-4 -right-2 bg-primaryColor text-white w-5 h-5 text-center flex justify-center items-center text-[11px] rounded-full"
+                >
+                  0
+                </div>
+              </button>
+            </div>
+          </div>
+        </div>
+      </header>
+      <div
+        class="slider bg-white fixed z-50 top-0 right-0 h-screen w-[400px] px-5 flex flex-col translate-x-[400px] duration-300"
+      >
+        <div
+          class="flex justify-between border-b border-primaryColor py-5 items-center mb-10"
+        >
+          <h1 class="font-bold text-2xl">Your Cart</h1>
+          <button
+            class="close-btn bg-primaryColor text-white p-2 rounded-full active:scale-75 duration-200"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="w-4 h-4 pointer-events-none"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M6 18 18 6M6 6l12 12"
+              />
+            </svg>
+          </button>
+        </div>
+        <div id="cartBody" class="overflow-y-auto">
+          <div class="cartItemGroup flex flex-col gap-3">
+            <div class="hidden last:flex justify-center items-center h-[700px]">
+              <img class="h-40" src="./empty-cart-svgrepo-com (1).svg" alt="">
+            </div>
+          </div>
+        </div>
+        <div class="footer mt-auto border-t border-primaryColor">
+          <div class="flex flex-col p-3 gap-2">
+            <p class="text-right text-xs">Total Amount</p>
+            <p class="text-right text-2xl">$<span id="totalAmount">0</span></p>
+            <button class="w-full bg-primaryColor text-white py-2">
+              Order Now
+            </button>
+          </div>
+        </div>
+      </div>
+      <section id="categorySection" class="mb-10">
+        <div class="container">
+          <div
+            class="category-section flex justify-between items-center gap-3 overflow-x-auto"
+          >
+            <button
+              class="active cat-item border w-full border-primaryColor text-nowrap px-5 py-1.5 hover:bg-primaryColor hover:text-white duration-200 rounded-full active:scale-75"
+            >
+              All
+            </button>
+          </div>
+        </div>
+      </section>
+      <section id="productSection" class="mb-10">
+        <div class="container">
+          <div
+            class="productGroup grid xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 gap-5"
+          ></div>
+        </div>
+      </section>
+      <footer class="mt-auto bg-primaryColor py-4">
+        <div class="container">
+          <div class="flex justify-between items-center">
+            <p>Copyright © 2023 ZML</p>
+            <button class="border border-white text-white p-2 rounded-full">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="w-6 h-6 pointer-events-none"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="m4.5 15.75 7.5-7.5 7.5 7.5"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </footer>
+
+      <template id="categoryTemplate">
+        <button
+          class="cat-item border w-full border-primaryColor text-nowrap px-5 py-1.5 rounded-full active:scale-75 hover:bg-primaryColor hover:text-white duration-200"
+        >
+          electronics
+        </button>
+      </template>
+      <template id="productTemplate">
+        <div class="product-item animate__animated animate__fadeIn">
+          <div class="px-5">
+            <img
+              class="product-img h-24 -mb-10"
+              src="https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg"
+              alt=""
+            />
+          </div>
+          <div
+            class="product-info border border-primaryColor flex flex-col gap-3 px-5 py-16"
+          >
+            <h3 class="product-title font-bold text-lg line-clamp-1">
+              Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops
+            </h3>
+            <p class="product-des text-sm text-zinc-500 line-clamp-3">
+              Your perfect pack for everyday use and walks in the forest. Stash
+              your laptop (up to 15 inches) in the padded sleeve, your everyday
+            </p>
+            <div class="flex justify-between">
+              <div class="product-starsGroup flex gap-1 items-center"></div>
+              <p class="product-rating text-sm"></p>
+            </div>
+            <hr class="border-primaryColor" />
+            <p>$ <span class="product-price">109.95</span></p>
+            <button
+              class="adc-btn w-full border-2 border-primaryColor py-3 hover:bg-primaryColor hover:text-white duration-200 active:scale-75 disabled:active:scale-100"
+            >
+              Add To Cart
+            </button>
+          </div>
+        </div>
+      </template>
+      <template id="cartItemTemplate">
+        <div id="cartItem" class="relative">
+          <button
+            class="card-delete-btn absolute top-10 right-5 bg-primaryColor duration-200 active:scale-75 text-white p-1.5 rounded-full"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              class="w-4 h-4 pointer-events-none"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M16.5 4.478v.227a48.816 48.816 0 0 1 3.878.512.75.75 0 1 1-.256 1.478l-.209-.035-1.005 13.07a3 3 0 0 1-2.991 2.77H8.084a3 3 0 0 1-2.991-2.77L4.087 6.66l-.209.035a.75.75 0 0 1-.256-1.478A48.567 48.567 0 0 1 7.5 4.705v-.227c0-1.564 1.213-2.9 2.816-2.951a52.662 52.662 0 0 1 3.369 0c1.603.051 2.815 1.387 2.815 2.951Zm-6.136-1.452a51.196 51.196 0 0 1 3.273 0C14.39 3.05 15 3.684 15 4.478v.113a49.488 49.488 0 0 0-6 0v-.113c0-.794.609-1.428 1.364-1.452Zm-.355 5.945a.75.75 0 1 0-1.5.058l.347 9a.75.75 0 1 0 1.499-.058l-.346-9Zm5.48.058a.75.75 0 1 0-1.498-.058l-.347 9a.75.75 0 0 0 1.5.058l.345-9Z"
+                clip-rule="evenodd"
+              />
+            </svg>
+          </button>
+          <div class="px-5 -mb-[30px]">
+            <img
+              class="cart-img h-[60px]"
+              src="https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg"
+              alt=""
+            />
+          </div>
+          <div class="flex flex-col gap-3 border border-primaryColor p-5">
+            <h4 class="cart-title text-[15px] line-clamp-1 mt-6 font-bold">
+              Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops
+            </h4>
+            <div class="flex justify-between items-center">
+              <p class="hidden">$ <span class="cart-price">109.95</span></p>
+              <p>$ <span class="cart-cost">109.95</span></p>
+              <div class="flex items-center gap-3">
+                <button
+                  class="cart-q-sub duration-200 active:scale-75 bg-primaryColor"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    class="w-4 h-4 stroke-orange-50 pointer-events-none"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M5 12h14"
+                    />
+                  </svg>
+                </button>
+                <span class="cart-quantity"></span>
+                <button
+                  class="cart-q-add duration-200 active:scale-75 bg-primaryColor"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    class="w-4 h-4 stroke-orange-50 pointer-events-none"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M12 4.5v15m7.5-7.5h-15"
+                    />
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </template>
+    </main>
+    <script type="module" src="/main.js"></script>
+  </body>
+</html>
