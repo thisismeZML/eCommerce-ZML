@@ -96,8 +96,6 @@ export const addProdutToCart = (e) => {
     });
   };
   addToCartAnimatImg.addEventListener("finish", handleAnimationFinish);
-
-  
 };
 
 export const updateCartItemCount = () => {
